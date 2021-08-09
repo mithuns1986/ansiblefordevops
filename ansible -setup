@@ -1,0 +1,42 @@
+vim /etc/ansible/hosts
+ansible
+ansible list-hosts
+ansible --list-hosts
+ansible --list-hosts all
+ansible --list-hosts mithun
+ansible --list-hosts all
+ansible -m ping all
+ansible -m ping all -username root
+ansible -m ping all
+vim /etc/ansible/hosts
+ansible -m ping all
+ansible -m ping mithun
+ssh root@172.31.5.242
+ansible -m ping mithun -u
+ansible -m ping mithun -u root -p redhat
+ansible -m ping mithun -u root
+id ansible
+ssh-keygen -t rsa
+cat .ssh/id_rsa.pub | ssh root@172.31.5.242 'cat >> .ssh/autorized_keys'
+cat .ssh/id_rsa.pub | ssh root@172.31.10.37 'cat >> .ssh/autorized_keys'
+ansible -m ping mithun
+ansible -m ping mithun -u root
+telnet 172.31.5.242 22
+yum install telnet
+telnet 172.31.5.242 22
+ansible --list-hosts
+ansible --list-hosts all
+ssh root@172.31.5.242 "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
+ssh root@172.31.10.37 "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
+ansible -m ping mithun
+ansible -m ping mithun -k
+ansible -m ping all -k
+ansible -m ping all
+ansible all -m copy -a "src=~/.ssh/id_rsa.pub dest=~/.ssh/authorized_keys" -k
+ansible -m ping abhishek
+ansible mithun -m shell -a "hostname;date;df -Ph"
+ansible mithun -m all -a "hostname;date;df -Ph"
+ansible all -m shell -a "hostname;date;df -Ph"
+ansible all -m ansible.builtin.yum -a "name=httpd state=absent"
+ansible all -m ansible.builtin.yum -a "name=httpd state=present"
+ ansible all -m ansible.builtin.service -a "name=httpd state=restarted"
